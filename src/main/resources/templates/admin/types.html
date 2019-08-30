@@ -61,9 +61,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr  >
-            <td  >1</td>
-            <td  >刻意练习清单</td>
+          <tr th:each="type,iterStat : ${page.content}" >
+            <td th:text="${iterStat.count}" >1</td>
+            <td th:text="${type.name}" >刻意练习清单</td>
             <td>
               <a href="#" th:href="@{/admin/types/{id}/input(id=${type.id})}" class="ui mini teal basic button">编辑</a>
               <a href="#" th:href="@{/admin/types/{id}/delete(id=${type.id})}" class="ui mini red basic button">删除</a>

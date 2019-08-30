@@ -28,14 +28,17 @@ public class Blog {
     private Date updateTIme;
 
     @ManyToOne
+    private User user;
+
+
+    @ManyToOne
     private Type type;
 
 
     @ManyToMany(cascade = {CascadeType.PERSIST})
     private List<Tag> tags = new ArrayList<>(16);
 
-    @ManyToOne
-    private User user;
+
 
 
     @OneToMany(mappedBy = "blog")
